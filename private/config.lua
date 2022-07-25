@@ -13,16 +13,16 @@
 --指定要启用的模块
 hspoon_list = {
     "AClock",
-    "ClipShow",
+    -- "ClipShow",
     "CountDown",
     "KSheet",
     "WinWin",
-    "VolumeScroll",
-    "PopupTranslateSelection",
+    -- "VolumeScroll",
+    -- "PopupTranslateSelection",
     -- "DeepLTranslate"
     -- "HSaria2"
     -- "HSearch"
-    --"SpeedMenu",
+    -- "SpeedMenu",
     -- "MountedVolumes",
     -- "HeadphoneAutoPause",
 }
@@ -33,23 +33,20 @@ hspoon_list = {
 -- 绑定 启动 app 快捷键
 
 hsapp_list = {
-    {key = 'a', name = 'Alacritty'},
+    {key = 'a', name = 'Alfred 5'},
     {key = 'c', id = 'com.google.Chrome'},
-    {key = 'e', name = '印象笔记'},
-    {key = 'f', name = 'Finder'},
-    {key = 'i', name = 'kitty'},
-    {key = 'j', name = 'Typora'},
-    {key = 'o', name = 'Obsidian'},
-    {key = 'k', name = 'Keynote'},
-    {key = 's', name = 'Sublime Text'},
-    {key = 'p', name = 'Podcasts'},
-    {key = 't', name = 'Terminal'},
-    {key = 'v', id = 'com.apple.ActivityMonitor'},
-    {key = 'b', id = 'vsCode.app'},
-    {key = 'm', name = 'Mweb'},
+    {key = 'e', name = 'Emacs'},
+    {key = 'f', name = 'Firefox'},
+    {key = 'i', name = 'iTerm'},
+    {key = 'm', name = 'MacVim'},
+    {key = 'v', id = 'com.microsoft.VSCode'},
+    {key = 'p', name = 'Finder'},
+    {key = 'q', name = 'QQ'},
+    {key = 's', name = 'Slack'},
+    {key = 't', name = 'Telegram'},
     {key = 'w', name = 'WeChat'},
-    {key = 'x', name = 'Thunder'},
-    {key = 'y', id = 'com.apple.systempreferences'},
+    {key = 'y', name = '印象笔记'},
+    {key = 'z', name = 'MacZip'},
 }
 
 
@@ -67,13 +64,13 @@ hsclipsM_keys = {"alt", "C"}
 
 
 -- 在默认浏览器中打开 Hammerspoon 和 Spoons API 手册
---hsman_keys = {"alt", "H"}
+hsman_keys = {"alt", "H"}
 
 -- 倒计时快捷键绑定
 hscountdM_keys = {"alt", "I"}
 
 -- 锁定电脑快捷键绑定
---hslock_keys = {"alt", "L"}
+hslock_keys = {"alt", "L"}
 
 -- 窗口自定义大小及位置快捷键绑定
 hsresizeM_keys = {"alt", "R"}
@@ -82,13 +79,13 @@ hsresizeM_keys = {"alt", "R"}
 hscheats_keys = {"alt", "S"}
 
 -- 显示时钟快捷键绑定
-hsaclock_keys = {"alt", "w"}
+hsaclock_keys = {"alt", "T"}
 
 -- 粘贴 chrome 或 safari 打开最前置的网址
 hstype_keys = {"alt", "V"}
 
 -- 显示 Hammerspoon 控制台
-hsconsole_keys = {"alt", "Z"}
+hsconsole_keys = {"alt", "/"}
 
 -- 显示 MountedVolumes
 hstype_keys = {"alt", "M"}
@@ -112,3 +109,11 @@ hshelp_keys = {{"alt", "shift"}, "/"}
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------------- end  ------------------------------------------------
 ----------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------
+------------------------------------------- YH Custom  ---------------------------------------------
+----------------------------------------------------------------------------------------------------
+require("private/ime")
+require("private/sizeup")
+-- require("private/weather")
