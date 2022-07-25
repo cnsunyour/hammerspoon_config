@@ -15,8 +15,25 @@ obj.homepage = "https://github.com/Hammerspoon/Spoons"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
 
 function obj:init()
-    self.menubar = hs.menubar.new()
+    self.menubar = hs.menubar.new(false)
+end
+
+function obj:start()
+    obj.menubar:returnToMenuBar()
     obj:rescan()
+end
+
+function obj:stop()
+    obj.menubar:removeFromMenuBar()
+    obj.timer:stop()
+end
+
+function obj:toggle()
+    if obj.timer:running() then
+        obj:stop()
+    else
+        obj:start()
+    end
 end
 
 local function data_diff()
