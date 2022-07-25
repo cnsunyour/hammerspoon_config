@@ -164,7 +164,7 @@ if spoon.ClipShow then
         spoon.ModalMgr:deactivate({"clipshowM"})
     end)
     cmodal:bind('', 'S', '用百度搜索', function()
-        spoon.ClipShow:openInBrowserWithRef("https://www.baidu.com/search?q=")
+        spoon.ClipShow:openInBrowserWithRef("https://www.baidu.com/s?wd=")
         spoon.ClipShow:toggleShow()
         spoon.ModalMgr:deactivate({"clipshowM"})
     end)
