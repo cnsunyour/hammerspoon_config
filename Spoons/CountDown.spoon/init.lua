@@ -60,7 +60,7 @@ function obj:startFor(minutes)
     else
         local mainScreen = hs.screen.mainScreen()
         local mainRes = mainScreen:fullFrame()
-        obj.canvas:frame({x=mainRes.x, y=mainRes.y+mainRes.h-5, w=mainRes.w, h=5})
+        obj.canvas:frame({x=mainRes.x, y=mainRes.h-5, w=mainRes.w, h=5})
         -- Set minimum visual step to 2px (i.e. Make sure every trigger updates 2px on screen at least.)
         local minimumStep = 2
         local secCount = math.ceil(60*minutes)
@@ -109,19 +109,16 @@ function obj:setProgress(progress, notifystr)
         -- Make the canvas actully visible
         local mainScreen = hs.screen.mainScreen()
         local mainRes = mainScreen:fullFrame()
-        obj.canvas:frame({x=mainRes.x, y=mainRes.y+mainRes.h-5, w=mainRes.w, h=5})
+        obj.canvas:frame({x=mainRes.x, y=mainRes.h-5, w=mainRes.w, h=5})
     end
     if progress >= 1 then
         canvasCleanup()
         if notifystr then
             hs.notify.new({
-                title = "倒计时(" .. notifystr .. " 分钟) 已经结束！!",
-                informativeText = " 现在的时间是： " .. os.date("%X")
+                title = "Time(" .. notifystr .. " mins) is up!",
+                informativeText = "Now is " .. os.date("%X")
             }):send()
         end
-        -- 倒计时结束后锁屏
-        hs.caffeinate.lockScreen()
-
     else
         obj.canvas[1].frame.w = tostring(progress)
         obj.canvas[2].frame.x = tostring(progress)
