@@ -36,7 +36,7 @@ hsapp_list = {
     {key = 'a', name = 'Alfred 5'},
     {key = 'c', id = 'com.google.Chrome'},
     {key = 'e', name = 'Emacs'},
-    {key = 'f', name = 'Firefox'},
+    {key = 'f', id = 'org.mozilla.firefoxdeveloperedition'},
     {key = 'i', name = 'iTerm'},
     {key = 'm', name = 'MacVim'},
     {key = 'v', id = 'com.microsoft.VSCode'},
@@ -54,44 +54,44 @@ hsapp_list = {
 ---------------------------------------- 模式快捷键绑定  ----------------------------------------------
 
 -- 窗口提示键绑定，快速切换到你想要的窗口上
-hswhints_keys = {"alt", "tab"}
+hswhints_keys = {{"ctrl", "alt"}, "tab"}
 
 -- 快速启动面板快捷键绑定
-hsappM_keys = {"alt", "A"}
+hsappM_keys = {{"ctrl", "alt"}, "A"}
 
 -- 系统剪切板快捷键绑定
-hsclipsM_keys = {"alt", "C"}
+hsclipsM_keys = {{"ctrl", "alt"}, "C"}
 
 
 -- 在默认浏览器中打开 Hammerspoon 和 Spoons API 手册
-hsman_keys = {"alt", "H"}
+hsman_keys = {{"ctrl", "alt"}, "H"}
 
 -- 倒计时快捷键绑定
-hscountdM_keys = {"alt", "I"}
+hscountdM_keys = {{"ctrl", "alt"}, "I"}
 
 -- 锁定电脑快捷键绑定
-hslock_keys = {"alt", "L"}
+hslock_keys = {{"ctrl", "alt"}, "L"}
 
 -- 窗口自定义大小及位置快捷键绑定
-hsresizeM_keys = {"alt", "R"}
+hsresizeM_keys = {{"ctrl", "alt"}, "R"}
 
 -- 定义应用程序快捷键面板快捷键
-hscheats_keys = {"alt", "S"}
+hscheats_keys = {{"ctrl", "alt"}, "S"}
 
 -- 显示时钟快捷键绑定
-hsaclock_keys = {"alt", "T"}
+hsaclock_keys = {{"ctrl", "alt"}, "T"}
 
 -- 粘贴 chrome 或 safari 打开最前置的网址
-hstype_keys = {"alt", "V"}
+hstype_keys = {{"ctrl", "alt"}, "V"}
 
 -- 显示 Hammerspoon 控制台
-hsconsole_keys = {"alt", "/"}
+hsconsole_keys = {{"ctrl", "alt"}, "/"}
 
 -- 显示 MountedVolumes
-hstype_keys = {"alt", "M"}
+hstype_keys = {{"ctrl", "alt"}, "M"}
 
 -- 显示搜索
-hsearch_keys = {"alt", "G"}
+hsearch_keys = {{"ctrl", "alt"}, "G"}
 
 ----------------------------------------------------------------------------------------------------
 --------------------------------- hammerspoon 快捷键绑定配置  -----------------------------------------
@@ -117,3 +117,20 @@ hshelp_keys = {{"alt", "shift"}, "/"}
 require("private/ime")
 require("private/sizeup")
 -- require("private/weather")
+
+hs.hotkey.bind({"ctrl","shift","cmd"}, ",", function()
+  local alacritty = hs.application.find('alacritty')
+  if (alacritty ~= nil and alacritty:mainWindow() and alacritty:isFrontmost()) then
+    alacritty:hide()
+  else
+    hs.application.launchOrFocus("/Applications/Alacritty.app")
+  end
+end)
+hs.hotkey.bind({"ctrl","shift","cmd"}, ".", function()
+  local alacritty = hs.application.find('alacritty')
+  if (alacritty ~= nil and alacritty:mainWindow() and alacritty:isFrontmost()) then
+    alacritty:hide()
+  else
+    hs.application.launchOrFocus("/Applications/Alacritty.app")
+  end
+end)
