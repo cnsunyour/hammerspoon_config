@@ -1,6 +1,6 @@
 local function Chinese()
     -- 简体拼音
-    hs.keycodes.currentSourceID("im.rime.inputmethod.Squirrel.Rime")
+    hs.keycodes.currentSourceID("im.rime.inputmethod.Squirrel.Hans")
 end
 
 local function English()
@@ -11,16 +11,22 @@ end
 -- app to expected ime config
 -- app和对应的输入法
 local app2Ime = {
-    {'/usr/local/Cellar/emacs-plus@28/28.1/Emacs.app', 'English'},
-    {'/usr/local/Cellar/macvim/8.2-172_1/MacVim.app', 'English'},
+    {'/usr/local/Cellar/emacs-plus@28/28.2/Emacs.app', 'English'},
+    {'/usr/local/Cellar/emacs-plus@29/29.0.60/Emacs.app', 'English'},
+    {'/usr/local/Cellar/macvim/9.0.1276/MacVim.app', 'English'},
     {'/System/Library/CoreServices/Finder.app', 'English'},
+    {'/Applications/Emacs.app', 'English'},
+    {'/Applications/MacVim.app', 'English'},
     {'/Applications/Alfred 5.app', 'English'},
+    {'/Applications/Raycast.app', 'English'},
     {'/Applications/iTerm.app', 'English'},
+    {'/Applications/Alacritty.app', 'English'},
     {'/Applications/SecureCRT.app', 'English'},
     {'/Applications/Visual Studio Code.app', 'English'},
     {'/Applications/Xcode.app', 'English'},
     {'/Applications/Google Chrome.app', 'English'},
     {'/Applications/Firefox.app', 'English'},
+    {'/Applications/Firefox Developer Edition.app', 'English'},
     {'/Applications/Kindle.app', 'English'},
     {'/Applications/Welly.app', 'English'},
     {'/Applications/System Preferences.app', 'English'},
