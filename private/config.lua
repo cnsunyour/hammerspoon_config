@@ -145,6 +145,15 @@ hs.hotkey.bind({ "ctrl", "shift", "cmd" }, ",", function()
 end)
 
 hs.hotkey.bind({ "ctrl", "shift", "cmd" }, ".", function()
+    local theapp = hs.application.get('Warp')
+    if (theapp ~= nil and theapp:mainWindow() and theapp:isFrontmost()) then
+        theapp:hide()
+    else
+        hs.application.launchOrFocus("/Applications/Warp.app")
+    end
+end)
+
+hs.hotkey.bind({ "ctrl", "shift", "cmd" }, "/", function()
     local theapp = hs.application.get('iTerm')
     if (theapp ~= nil and theapp:mainWindow() and theapp:isFrontmost()) then
         theapp:hide()
