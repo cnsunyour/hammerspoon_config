@@ -161,3 +161,12 @@ hs.hotkey.bind({ "ctrl", "shift", "cmd" }, "/", function()
         hs.application.launchOrFocus("/Applications/iTerm.app")
     end
 end)
+
+hs.hotkey.bind({ "ctrl", "alt", "cmd" }, "r", function()
+    local theapp = hs.application.get('Raindrop.io')
+    if (theapp ~= nil and theapp:mainWindow() and theapp:isFrontmost()) then
+        theapp:hide()
+    else
+        hs.application.launchOrFocus("/Applications/Raindrop.io.app")
+    end
+end)
