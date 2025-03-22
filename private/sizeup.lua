@@ -74,11 +74,11 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "M", function()
 end)
 -- Send Window Center
 hs.hotkey.bind({"cmd","alt","ctrl"}, "C", function()
-  sizeup.move_to_center_absolute({w=1440, h=900})
+  sizeup.move_to_center_absolute({w=1440, h=936})
   -- sizeup.move_to_center_relative({w=0.75, h=0.75})
 end)
 hs.hotkey.bind({"cmd","alt","ctrl"}, "V", function()
-  sizeup.move_to_center_absolute({w=1600, h=1080})
+  sizeup.move_to_center_absolute({w=1710, h=1080})
   -- sizeup.move_to_center_relative({w=0.75, h=0.75})
 end)
 
